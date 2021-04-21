@@ -68,45 +68,16 @@
 				</div>
 
 				<div class="list-group-item">
-
-					<div class="form-group">
-						<div class="input-group">
-							<div class="input-group-prepend">
-                                <span class="input-group-text">选择分类</span>
-                            </div>
-							<select name="shopType" id="shopType" class="custom-select" onchange="getShop()">
-								<option value="0">请选择分类</option>
-
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="input-group">
-							<div class="input-group-prepend">
-                                <span class="input-group-text">选择商品</span>
-                            </div>
-							<select name="shop" id="shop" class="custom-select" onchange="getPoint();">
-								<option value="-1">请选择商品</option>
-							</select>
-						</div>
-					</div>
 					
 					<div class="form-group">
 						<div class="input-group">
 							<div class="input-group-prepend">
-                                <span class="input-group-text">商品价格</span>
+                                <span class="input-group-text">入群价格</span>
                             </div>
-							<input type="text" name="money" id="money" class="form-control" disabled value="￥0.00"/>
+							<input type="text" name="money" id="money" class="form-control" disabled value="￥加载中..."/>
 						</div>
 					</div>
-					<div class="form-group" style="display:none;">
-						<div class="input-group">
-							<div class="input-group-prepend">
-                                <span class="input-group-text">购买数量</span>
-                            </div>
-							<input type="number" name="num" id="num" class="form-control" value="1" oninput="getPoint()" disabled=""/>
-						</div>
-					</div>
+					
 					<div class="form-group">
 						<div class="input-group">
 							<div class="input-group-prepend">
@@ -209,47 +180,35 @@
 				$("#footer-name").html(data.data.name);
 				$("#qun-link").prop("href",data.data.qunlink);
 				
-
-
-
 			});
-            $.post("getShopType",function (data) {
-                for (var i = 0;i<data.data.length;i++){
-                    $("#shopType").append('<option value="'+data.data[i].id+'">'+data.data[i].name+'</option>');
-				}
-            });
+           
 
             var shopList = [];
 
-            function getShop() {
-                $.post("getShop","typeId="+$("#shopType").val(),function (data) {
-                    $("#shop").html('<option value="-1">请选择商品</option>');
+            
+                $.post("getShop","typeId=0",function (data) {
+                    
                     for (var i = 0;i<data.data.length;i++){
                         $("#shop").append('<option value="'+i+'">'+data.data[i].shopname+'</option>');
                     }
                     shopList = data.data;
-                });
-            }
+                    $("#money").val("￥"+shopList[0].money)
 
-            function getPoint() {
-                if ($("#shop").val() == -1){
-                    return;
-				}
-				$("#money").val("￥"+shopList[$("#shop").val()].money*$("#num").val())
-
-				$("#shoptext").html(shopList[$("#shop").val()].shoptext)
+				$("#shoptext").html(shopList[0].shoptext)
 				$("#shoptext").show()
-				// $("#shopkc").html("库存："+shopList[$("#shop").val()].kucun)
+				// $("#shopkc").html("库存："+shopList[0].kucun)
 				// $("#shopkc").show()
+                });
+            
 
+               
+				
 
-			}
 
 
             function buy() {
-				var shop = $("#shop").val();
+				var shop = 0;
 
-				var num = $("#num").val();
 				var qq = $("#qq").val();
 				var qq2 = $("#qq2").val();
 				var paytype = $("#paytype").val();
@@ -259,10 +218,7 @@
 				}
 				var shopid = shopList[shop].id;
 
-				if (num<1){
-					layer.msg("请输入正确的购买数量")
-					return;
-				}
+			
 				if (qq==""){
 					layer.msg("请输入QQ号")
 					return;
@@ -280,7 +236,7 @@
 					,shade: 0.01
 					,time:0
 				});
-				$.post("buy","shopid="+shopid+"&num="+num+"&qq="+qq+"&paytype="+paytype,function (data) {
+				$.post("buy","shopid="+shopid+"&num="+1+"&qq="+qq+"&paytype="+paytype,function (data) {
 					if (data.code==1){
 						window.location.href=data.data
 					} else{
@@ -306,7 +262,7 @@
 				$.post("getOrderById","id="+getQueryString("orderId")+"&sign="+getQueryString("sign"),function (data) {
 					layer.closeAll();
 					if (data.code==1){
-						layer.prompt({title: '购买成功，以下是您的卡密信息', formType: 2,value:data.data}, function(text, index){
+						layer.prompt({title: '购买成功', formType: 2,value:data.data}, function(text, index){
 							layer.close(index);
 
 						});
@@ -316,7 +272,7 @@
 			function cxo() {
 				var qq = $("#qq3").val();
 				if (qq==""){
-					layer.msg("请输入联系方式");
+					layer.msg("请输入QQ号");
 					return;
 				}
 
