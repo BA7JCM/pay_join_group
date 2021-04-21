@@ -17,39 +17,18 @@ class Index
 
         $menu = array(
             array(
-                "name"=>"主页",
+                "name"=>"管理订单",
                 "type"=>"url",
-                "url"=>"pages/admin/main.html?t=".time(),
-            ), array(
-                "name"=>"配置",
+                "url"=>"pages/admin/orderList.html?t=".time(),
+            ),array(
+                "name"=>"系统配置",
                 "type"=>"url",
                 "url"=>"pages/admin/setting.html?t=".time(),
-            ),array(
-                "name"=>"分类",
-                "type"=>"menu",
-                "node"=>array(
-                    array(
-                        "name"=>"管理分类",
-                        "type"=>"url",
-                        "url"=>"pages/admin/shoptypeList.html?t=".time(),
-                    )
-                ),
-            ),array(
-                "name"=>"商品",
-                "type"=>"menu",
-                "node"=>array(
-                    array(
-                        "name"=>"添加商品",
-                        "type"=>"url",
-                        "url"=>"pages/admin/shopAdd.html?t=".time(),
-                    ),
-                    array(
-                        "name"=>"管理商品",
-                        "type"=>"url",
-                        "url"=>"pages/admin/shopList.html?t=".time(),
-                    )
-                ),
-            ),array(
+            ), array(
+                "name"=>"价格设置",
+                "type"=>"url",
+                "url"=>"pages/admin/shopList.html?t=".time(),
+            ), array(
                 "name"=>"卡密",
                 "type"=>"menu",
                 "node"=>array(
@@ -62,16 +41,6 @@ class Index
                         "name"=>"管理卡密",
                         "type"=>"url",
                         "url"=>"pages/admin/kmList.html?t=".time(),
-                    )
-                ),
-            ),array(
-                "name"=>"订单",
-                "type"=>"menu",
-                "node"=>array(
-                    array(
-                        "name"=>"管理订单",
-                        "type"=>"url",
-                        "url"=>"pages/admin/orderList.html?t=".time(),
                     )
                 ),
             )
