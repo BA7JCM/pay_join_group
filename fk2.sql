@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 2021-04-21 16:31:00
+-- Generation Time: 2021-04-21 20:35:30
 -- 服务器版本： 5.6.44-log
 -- PHP Version: 7.3.5
 
@@ -73,11 +73,13 @@ CREATE TABLE `setting` (
 --
 
 INSERT INTO `setting` (`vkey`, `vvalue`) VALUES
-('gg', 'QQ付费入群系统，开源系统'),
+('gg', '付费入群开源系统，项目地址<a target=\"_self\" href=\"https://github.com/LittleTurtle2333/pay_join_group\">https://github.com/LittleTurtle2333/pay_join_group</a>'),
 ('vmq', ''),
-('name', 'QQ付费入群系统'),
+('name', '付费入群系统'),
 ('user', 'admin'),
-('pass', 'admin');
+('pass', 'admin'),
+('qunlink', ''),
+('qunnum', '');
 
 -- --------------------------------------------------------
 
@@ -102,7 +104,7 @@ CREATE TABLE `shop` (
 --
 
 INSERT INTO `shop` (`id`, `typeid`, `typename`, `shopname`, `shoptext`, `xiaoliang`, `kucun`, `money`, `state`) VALUES
-(1, 1, '付费入群授权', '付费入群授权', '<p><span>请填写需要加群的</span><span><b>本人</b></span><span>QQ号</span><span><b>（非群号）</b></span></p>', 0, 0, 1, 1);
+(1, 1, '付费入群授权', '付费入群授权', '<p><span>请填写需要加群的</span><span><b>本人</b></span><span>QQ号</span><span><b>（非群号）</b></span></p>', 0, 0, 1.99, 1);
 
 -- --------------------------------------------------------
 
