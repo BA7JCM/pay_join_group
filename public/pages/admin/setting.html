@@ -105,7 +105,7 @@
         var gg =$('#gg').val();
 
 
-		var post = "name="+name+"&gg="+encodeURIComponent(gg)+"&user="+user+"&pass="+pass+"&vmq="+vmq+"&qunnum="+qunnum+"&qunlink="+qunlink;
+		var post = "name="+name+"&gg="+encodeURIComponent(gg)+"&user="+user+"&pass="+pass+"&vmq="+vmq+"&qunnum="+qunnum+"&qunlink="+encodeURIComponent(qunlink);
 
         $.post("admin/saveSetting",post,function (data) {
             layer.msg(data.msg);
