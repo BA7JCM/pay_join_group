@@ -13,7 +13,9 @@ QQ付费入群系统 是基于 V发卡（ https://github.com/szvone/Vfkphp ）
 
 > bug反馈请建立issues
 
-> Nonebot2机器人插件（ https://github.com/LittleTurtle2333/pay_join_group_bot ）
+> Mirai机器人插件-推荐（ https://github.com/LittleTurtle2333/pay_join_group_mirai ）
+
+> Nonebot2机器人插件（ https://github.com/LittleTurtle2333/pay_join_group_nonebot2 ）
 
 > V免签PHP服务端（ https://github.com/szvone/vmqphp ）
 
