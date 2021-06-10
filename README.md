@@ -6,7 +6,7 @@ QQ付费入群系统 是基于 V发卡（ https://github.com/szvone/Vfkphp ）
 
  + 完全开源
  + 对接v免签，实现配套免签约自动回调
- + 提供Nonebot2插件，支持24小时审核入群
+ + 提供Mirai/Nonebot2插件，支持24小时审核入群
  
 
 > QQ付费入群系统仅供个人开发者调试测试和交流学习使用，请勿用于非法用途
@@ -15,7 +15,7 @@ QQ付费入群系统 是基于 V发卡（ https://github.com/szvone/Vfkphp ）
 
 > Mirai机器人插件-推荐（ https://github.com/LittleTurtle2333/pay_join_group_mirai ）
 
-> Nonebot2机器人插件（ https://github.com/LittleTurtle2333/pay_join_group_nonebot2 ）
+> Nonebot2机器人插件-不推荐（ https://github.com/LittleTurtle2333/pay_join_group_nonebot2 ）
 
 > V免签PHP服务端（ https://github.com/szvone/vmqphp ）
 
